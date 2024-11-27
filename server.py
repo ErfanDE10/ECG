@@ -3,6 +3,10 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Server is live and working!", 200
+
 @app.route('/send_data', methods=['POST'])
 def receive_data():
     data = request.get_json()
